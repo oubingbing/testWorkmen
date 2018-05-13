@@ -37,8 +37,8 @@ class Events
     public static function onConnect($client_id)
     {
         // 向当前client_id发送数据
-        Gateway::sendToClient($client_id, json_encode([
-            'clientId' => $client_id,
+        Gateway::sendToClient('333', json_encode([
+            'clientId' => '3333',
         ]));
     }
     
@@ -58,6 +58,6 @@ class Events
     */
    public static function onClose($client_id) {
        // 向所有人发送 
-       //GateWay::sendToAll("$client_id logout");
+       GateWay::sendToAll("logout");
    }
 }
